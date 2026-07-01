@@ -8,6 +8,12 @@
 https://stake.com/?c=Supervip8
 ```
 
+当前公开页面：
+
+```text
+https://lxq32467.github.io/stake-supervip8-landing/
+```
+
 ## 里面有什么
 
 - `index.html`：可直接打开的中文落地页。
