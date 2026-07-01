@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stake 新手活动入口 | 非官方指南</title>
+  <meta name="description" content="Stake 新手活动入口、注册步骤、常见问题和负责任娱乐提醒。18+，仅限当地法律允许地区。">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #071519;
+      --panel: #10242b;
+      --panel-soft: #17313a;
+      --line: rgba(201, 229, 229, 0.16);
+      --text: #edf7f5;
+      --muted: #9bb8b7;
+      --cyan: #31d0c6;
+      --mint: #8fe7c8;
+      --amber: #f0b24d;
+      --danger: #ff7a7a;
+      --ink: #061013;
+      --shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      font-family: Inter, "Microsoft YaHei", "PingFang SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      position: fixed;
+      z-index: 20;
+      inset: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px clamp(18px, 4vw, 56px);
+      background: rgba(7, 21, 25, 0.78);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border: 1px solid rgba(49, 208, 198, 0.5);
+      border-radius: 8px;
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .brand strong {
+      display: block;
+      white-space: nowrap;
+      font-size: 15px;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav a {
+      text-decoration: none;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      min-height: 86vh;
+      align-items: center;
+      padding: 118px clamp(18px, 5vw, 72px) 68px;
+      overflow: hidden;
+      background-image: url("./assets/hero-gaming-desk.png");
+      background-size: cover;
+      background-position: center right;
+    }
+
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background: rgba(3, 12, 15, 0.64);
+    }
+
+    .hero::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background: linear-gradient(90deg, rgba(7, 21, 25, 0.95) 0%, rgba(7, 21, 25, 0.72) 46%, rgba(7, 21, 25, 0.22) 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 760px;
+      min-width: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: var(--mint);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 8px;
+      height: 8px;
+      content: "";
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 18px rgba(49, 208, 198, 0.8);
+    }
+
+    h1 {
+      max-width: 690px;
+      margin: 0;
+      font-size: clamp(40px, 7vw, 76px);
+      line-height: 1.03;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .lead {
+      max-width: 630px;
+      margin: 24px 0 0;
+      color: #c8dddb;
+      font-size: clamp(16px, 2vw, 20px);
+      overflow-wrap: anywhere;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 34px 0 0;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: var(--cyan);
+      color: var(--ink);
+      box-shadow: 0 12px 30px rgba(49, 208, 198, 0.24);
+    }
+
+    .button-secondary {
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+    }
+
+    .notice {
+      margin-top: 24px;
+      color: #aac5c2;
+      font-size: 13px;
+    }
+
+    main {
+      background: var(--bg);
+    }
+
+    .section {
+      padding: clamp(50px, 7vw, 86px) clamp(18px, 5vw, 72px);
+      border-top: 1px solid var(--line);
+    }
+
+    .section-inner {
+      width: min(1160px, 100%);
+      margin: 0 auto;
+      min-width: 0;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 10px;
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      min-height: 122px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .stat b {
+      display: block;
+      color: var(--cyan);
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .step {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .step-num {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      margin-bottom: 18px;
+      place-items: center;
+      border-radius: 8px;
+      background: rgba(49, 208, 198, 0.12);
+      color: var(--cyan);
+      font-weight: 900;
+    }
+
+    .step h3,
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .step p,
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .feature {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-soft);
+    }
+
+    .risk-band {
+      background: #0c1c22;
+    }
+
+    .risk-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .risk-list li {
+      padding: 16px 18px;
+      border: 1px solid rgba(255, 122, 122, 0.24);
+      border-radius: 8px;
+      background: rgba(255, 122, 122, 0.08);
+      color: #ffd2d2;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    details + details {
+      margin-top: 10px;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 18px 20px;
+      font-weight: 800;
+    }
+
+    details p {
+      margin: 0;
+      padding: 0 20px 20px;
+      color: var(--muted);
+    }
+
+    .final-cta {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-soft);
+    }
+
+    .final-cta h2 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 34px);
+      letter-spacing: 0;
+    }
+
+    .final-cta p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .footer {
+      padding: 26px clamp(18px, 5vw, 72px);
+      color: #87a5a3;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      width: min(1160px, 100%);
+      margin: 0 auto;
+    }
+
+    .replace-link-warning {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 14px;
+      border: 1px solid rgba(240, 178, 77, 0.35);
+      border-radius: 8px;
+      background: rgba(240, 178, 77, 0.1);
+      color: #ffe1ab;
+      font-size: 14px;
+    }
+
+    .replace-link-warning.is-visible {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 82vh;
+        background-position: 66% center;
+      }
+
+      .stats,
+      .steps,
+      .feature-grid,
+      .risk-list,
+      .final-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .final-cta .button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .site-header {
+        padding: 12px 16px;
+      }
+
+      .brand span {
+        display: none;
+      }
+
+      .hero {
+        min-height: 78vh;
+        padding-right: 24px;
+        padding-left: 24px;
+        padding-top: 96px;
+      }
+
+      .hero-inner {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      h1 {
+        font-size: clamp(34px, 10.5vw, 44px);
+      }
+
+      .headline-brand,
+      .headline-main {
+        display: block;
+      }
+
+      .lead,
+      .notice,
+      .cta-row {
+        max-width: 20em;
+      }
+
+      .cta-row .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand" aria-label="页面品牌">
+      <div class="brand-mark">S</div>
+      <div>
+        <strong>Stake 新手活动入口</strong>
+        <span>非官方联盟指南</span>
+      </div>
+    </div>
+    <nav class="nav" aria-label="页面导航">
+      <a href="#steps">注册步骤</a>
+      <a href="#features">适合谁</a>
+      <a href="#risk">风险提醒</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">18+ / 仅限允许地区 / 负责任娱乐</p>
+      <h1><span class="headline-brand">Stake</span> <span class="headline-main">新手活动入口</span></h1>
+      <p class="lead">这里整理注册入口、常见问题、玩法说明和活动提醒。页面为联盟推广者维护，不代表 Stake 官方承诺；所有奖励、活动和限制以 Stake 页面实际显示为准。</p>
+      <div class="cta-row">
+        <a class="button button-primary affiliate-link" href="https://stake.com/?c=Supervip8" rel="nofollow sponsored noopener" target="_blank">进入活动</a>
+        <a class="button button-secondary" href="#steps">查看步骤</a>
+      </div>
+      <p class="notice">请勿使用 VPN 或虚假信息绕过地区限制。娱乐预算应提前设定，亏损不可通过加注追回。</p>
+      <div id="replaceLinkWarning" class="replace-link-warning">当前页面还没有替换真实活动链接，请先把 YOUR_STAKE_CAMPAIGN_LINK_HERE 改成你的 Stake 活动链接。</div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>页面适合用来做什么</h2>
+          <p>把冷链接变成可信的新手入口，同时保留合规说明，方便你后续截图给联盟经理或合作渠道。</p>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <b>01</b>
+            <span>给 Telegram、X、短视频简介放统一入口。</span>
+          </div>
+          <div class="stat">
+            <b>02</b>
+            <span>让用户注册前先理解地区、年龄和风险限制。</span>
+          </div>
+          <div class="stat">
+            <b>03</b>
+            <span>配合不同 Stake Campaign 链接做渠道测试。</span>
+          </div>
+          <div class="stat">
+            <b>04</b>
+            <span>作为你向 Stake 证明推广渠道的基础页面。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="steps" class="section">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>注册前先确认三件事</h2>
+          <p>这部分帮助用户减少无效注册，也能保护你的联盟账户质量。</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="step-num">1</div>
+            <h3>确认地区与年龄</h3>
+            <p>仅面向年满 18 岁或当地法定年龄，且当地法律允许使用 Stake 服务的用户。</p>
+          </article>
+          <article class="step">
+            <div class="step-num">2</div>
+            <h3>先点击活动入口</h3>
+            <p>注册前先通过本页活动入口进入。若注册时填写了其他邀请码，可能会覆盖当前推荐关系。</p>
+          </article>
+          <article class="step">
+            <div class="step-num">3</div>
+            <h3>用娱乐预算参与</h3>
+            <p>提前设定预算和时间，不借钱、不追损、不把娱乐当作收入来源。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>适合关注的内容</h2>
+          <p>后续社群和内容账号可以围绕这些主题更新，提升用户留存和活跃。</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>赛事观察</h3>
+            <p>整理赛程、伤停、盘口变化和赛后复盘，不承诺结果，不引导高风险下注。</p>
+          </article>
+          <article class="feature">
+            <h3>活动提醒</h3>
+            <p>汇总 Stake 页面展示的活动、挑战和 VIP 信息，所有细则以官方页面为准。</p>
+          </article>
+          <article class="feature">
+            <h3>玩法说明</h3>
+            <p>解释 Dice、Mines、Crash、Plinko 等玩法规则、波动和预算控制方式。</p>
+          </article>
+          <article class="feature">
+            <h3>新手导航</h3>
+            <p>覆盖注册、钱包、存取款、账户安全和常见问题，减少用户注册后的流失。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="risk" class="section risk-band">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>重要风险提醒</h2>
+          <p>这不是投资建议，也不是赚钱渠道。参与前请了解并接受可能亏损本金的风险。</p>
+        </div>
+        <ul class="risk-list">
+          <li>不向未成年人推广，不向限制地区推广。</li>
+          <li>不使用 VPN、假身份或机器人流量。</li>
+          <li>不承诺稳赚、翻倍、回血、内幕或包赢。</li>
+          <li>不借贷参与，不用生活资金参与。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>常见问题</h2>
+          <p>把用户最容易卡住的地方提前说明，能提高有效注册质量。</p>
+        </div>
+        <details>
+          <summary>为什么一定要先点活动入口？</summary>
+          <p>联盟推荐通常依赖注册前的访问记录或活动链接。若用户直接注册，或在注册时填写其他邀请码，推荐关系可能不会归到当前活动。</p>
+        </details>
+        <details>
+          <summary>这个页面是 Stake 官方页面吗？</summary>
+          <p>不是。本页是联盟推广者维护的新手入口和信息整理页。任何活动、奖励、限制、地区可用性和账户规则，以 Stake 实际页面和条款为准。</p>
+        </details>
+        <details>
+          <summary>可以用 VPN 注册吗？</summary>
+          <p>不可以。不要通过 VPN、虚假地址或其他方式绕过地区限制。这样可能导致账户受限，也会影响联盟推荐有效性。</p>
+        </details>
+        <details>
+          <summary>参与前最应该注意什么？</summary>
+          <p>只使用可承受损失的娱乐预算，提前设置上限，不追损，不把博彩当作收入来源。若发现自己难以停止，应立刻暂停并寻求帮助。</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="final-cta">
+          <div>
+            <h2>准备好后再进入活动</h2>
+            <p>确认年龄、地区和预算后，通过活动入口访问 Stake。请保留截图和注册信息，方便后续排查推荐关系。</p>
+          </div>
+          <a class="button button-primary affiliate-link" href="https://stake.com/?c=Supervip8" rel="nofollow sponsored noopener" target="_blank">进入活动</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      非官方联盟推广页面。18+。请遵守所在地法律法规和 Stake 平台条款。所有产品、活动和奖励以 Stake 实际页面显示为准。
+    </div>
+  </footer>
+
+  <script>
+    const affiliateLink = "https://stake.com/?c=Supervip8";
+    const warning = document.getElementById("replaceLinkWarning");
+    const links = document.querySelectorAll(".affiliate-link");
+    const needsReplacement = affiliateLink.includes("YOUR_STAKE_CAMPAIGN_LINK_HERE");
+
+    links.forEach((link) => {
+      link.href = affiliateLink;
+      if (needsReplacement) {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          warning.classList.add("is-visible");
+          warning.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
