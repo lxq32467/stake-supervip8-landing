@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stake 新手活动入口 | 非官方指南</title>
-  <meta name="description" content="Stake 新手入口、注册步骤、活动说明、玩法介绍和负责任娱乐提醒。18+，仅限当地法律允许地区。">
+  <title>Stake Supervip8 活动入口 | 非官方新手指南</title>
+  <meta name="description" content="Stake Supervip8 活动入口、注册步骤、存款前检查、平台简介、活动说明和负责任娱乐提醒。18+，仅限当地法律允许地区。">
   <style>
     :root {
       color-scheme: dark;
@@ -209,6 +209,12 @@
       font-size: 13px;
     }
 
+    .updated {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
     main {
       background: var(--bg);
     }
@@ -272,6 +278,119 @@
       font-size: 14px;
     }
 
+    .promo-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .promo-card,
+    .info-table,
+    .update-list {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .promo-card {
+      display: grid;
+      gap: 18px;
+      padding: 24px;
+    }
+
+    .promo-card h2 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .promo-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .code-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid rgba(49, 208, 198, 0.28);
+      border-radius: 8px;
+      background: rgba(49, 208, 198, 0.08);
+    }
+
+    .code-box span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .code-box strong {
+      display: block;
+      color: var(--text);
+      font-size: clamp(24px, 4vw, 38px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .copy-button {
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .promo-notes {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: #bdd2cf;
+      font-size: 14px;
+    }
+
+    .promo-notes li::before {
+      margin-right: 8px;
+      color: var(--cyan);
+      content: "•";
+    }
+
+    .info-table {
+      overflow: hidden;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-row:last-child {
+      border-bottom: 0;
+    }
+
+    .info-row b {
+      color: var(--mint);
+      font-size: 14px;
+    }
+
+    .info-row span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .steps {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -321,6 +440,40 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--panel-soft);
+    }
+
+    .update-list {
+      display: grid;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    .update-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 18px;
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .update-item:last-child {
+      border-bottom: 0;
+    }
+
+    .update-item time {
+      color: var(--mint);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .update-item h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .update-item p {
+      margin: 0;
+      color: var(--muted);
     }
 
     .risk-band {
@@ -414,7 +567,13 @@
       .steps,
       .feature-grid,
       .risk-list,
+      .promo-panel,
       .final-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .update-item,
+      .info-row {
         grid-template-columns: 1fr;
       }
 
@@ -449,7 +608,8 @@
       }
 
       .headline-brand,
-      .headline-main {
+      .headline-main,
+      .headline-main span {
         display: block;
       }
 
@@ -475,9 +635,11 @@
       </div>
     </div>
     <nav class="nav" aria-label="页面导航">
+      <a href="#supervip8">Supervip8</a>
       <a href="#about">Stake 简介</a>
       <a href="#steps">注册前</a>
       <a href="#register">注册/存款</a>
+      <a href="#updates">活动更新</a>
       <a href="#features">内容</a>
       <a href="#risk">风险提醒</a>
       <a href="#faq">FAQ</a>
@@ -487,17 +649,75 @@
   <section class="hero">
     <div class="hero-inner">
       <p class="eyebrow">18+ / 仅限允许地区 / 负责任娱乐</p>
-      <h1><span class="headline-brand">Stake</span> <span class="headline-main">新手活动入口</span></h1>
+      <h1><span class="headline-brand">Stake</span> <span class="headline-main"><span>Supervip8</span> <span>活动入口</span></span></h1>
       <p class="lead">这里整理 Stake 注册入口、常见问题、玩法说明和活动提醒。所有奖励、活动和限制以 Stake 页面实际显示为准。</p>
       <div class="cta-row">
         <a class="button button-primary affiliate-link" href="https://stake.com/?c=Supervip8" rel="nofollow sponsored noopener" target="_blank">进入活动</a>
         <a class="button button-secondary" href="#register">查看注册/存款</a>
       </div>
       <p class="notice">请勿使用 VPN 或虚假信息绕过地区限制。娱乐预算应提前设定，亏损不可通过加注追回。</p>
+      <p class="updated">最后更新：2026-07-02</p>
     </div>
   </section>
 
   <main>
+    <section id="supervip8" class="section">
+      <div class="section-inner">
+        <div class="promo-panel">
+          <article class="promo-card">
+            <div>
+              <p class="eyebrow">活动码</p>
+              <h2>Supervip8 活动入口</h2>
+            </div>
+            <p>通过本页按钮进入 Stake 后，注册过程如出现活动码输入框，可核对是否为 <strong>Supervip8</strong>。具体活动、奖励和限制以 Stake 实际页面为准。</p>
+            <div class="code-box" aria-label="Supervip8 活动码">
+              <div>
+                <span>活动码</span>
+                <strong>Supervip8</strong>
+              </div>
+              <button class="copy-button" type="button" data-copy-code="Supervip8">复制</button>
+            </div>
+            <div class="cta-row">
+              <a class="button button-primary affiliate-link" href="https://stake.com/?c=Supervip8" rel="nofollow sponsored noopener" target="_blank">进入 Stake 活动</a>
+              <a class="button button-secondary" href="#register">查看使用步骤</a>
+            </div>
+            <ul class="promo-notes">
+              <li>18+，仅限当地法律和 Stake 条款允许地区。</li>
+              <li>不保证固定奖励，不承诺收益，不建议追损。</li>
+              <li>注册、验证、活动资格和支付方式以官方页面为准。</li>
+            </ul>
+          </article>
+
+          <aside class="info-table" aria-label="快速信息">
+            <div class="info-row">
+              <b>入口代码</b>
+              <span>Supervip8</span>
+            </div>
+            <div class="info-row">
+              <b>页面性质</b>
+              <span>非官方新手指南与联盟活动入口</span>
+            </div>
+            <div class="info-row">
+              <b>适用对象</b>
+              <span>成年人，且所在地允许使用 Stake 服务</span>
+            </div>
+            <div class="info-row">
+              <b>覆盖内容</b>
+              <span>Casino、Sportsbook、Originals、活动、注册和存款前检查</span>
+            </div>
+            <div class="info-row">
+              <b>必看提醒</b>
+              <span>不要使用 VPN，不要借贷参与，不要把博彩当作收入来源</span>
+            </div>
+            <div class="info-row">
+              <b>更新时间</b>
+              <span>2026-07-02</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="section">
       <div class="section-inner">
         <div class="section-head">
@@ -592,16 +812,21 @@
           </article>
           <article class="step">
             <div class="step-num">2</div>
+            <h3>核对 Supervip8</h3>
+            <p>如果注册页出现活动码输入框，确认显示或填写为 Supervip8。若页面未显示输入框，以活动链接跳转后的官方页面为准。</p>
+          </article>
+          <article class="step">
+            <div class="step-num">3</div>
             <h3>填写账户信息</h3>
             <p>按页面提示完成注册信息。请使用本人真实可用的信息，不要借用他人账户。</p>
           </article>
           <article class="step">
-            <div class="step-num">3</div>
+            <div class="step-num">4</div>
             <h3>完成必要验证</h3>
             <p>如果页面要求邮箱、手机号或身份验证，请按官方提示完成。验证要求可能因地区和账户状态不同而变化。</p>
           </article>
           <article class="step">
-            <div class="step-num">4</div>
+            <div class="step-num">5</div>
             <h3>先设置安全项</h3>
             <p>注册后优先检查密码、二次验证和账户安全，再决定是否参与任何活动。</p>
           </article>
@@ -631,6 +856,38 @@
           <article class="feature">
             <h3>保留转账记录</h3>
             <p>保存交易哈希、截图和时间记录。如遇到账延迟，优先通过官方支持渠道查询。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="updates" class="section">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>活动更新</h2>
+          <p>Stake 活动和资格条件可能变化，这里只记录本页整理过的更新。参与前请以 Stake 官方页面为准。</p>
+        </div>
+        <div class="update-list">
+          <article class="update-item">
+            <time datetime="2026-07-02">2026-07-02</time>
+            <div>
+              <h3>接入 Supervip8 活动入口</h3>
+              <p>本页按钮已统一指向 Supervip8 活动链接，并增加活动码复制功能。</p>
+            </div>
+          </article>
+          <article class="update-item">
+            <time datetime="2026-07-02">2026-07-02</time>
+            <div>
+              <h3>新增注册与存款前检查</h3>
+              <p>补充注册步骤、code 核对、账户验证、币种网络核对和首次小额测试提醒。</p>
+            </div>
+          </article>
+          <article class="update-item">
+            <time datetime="2026-07-02">2026-07-02</time>
+            <div>
+              <h3>新增 Stake 平台简介</h3>
+              <p>整理 Casino、Sportsbook、Originals、多币种选项、活动和 VIP 相关信息。</p>
+            </div>
           </article>
         </div>
       </div>
@@ -729,9 +986,25 @@
   <script>
     const affiliateLink = "https://stake.com/?c=Supervip8";
     const links = document.querySelectorAll(".affiliate-link");
+    const copyButtons = document.querySelectorAll("[data-copy-code]");
 
     links.forEach((link) => {
       link.href = affiliateLink;
+    });
+
+    copyButtons.forEach((button) => {
+      button.addEventListener("click", async () => {
+        const code = button.getAttribute("data-copy-code");
+        try {
+          await navigator.clipboard.writeText(code);
+          button.textContent = "已复制";
+          window.setTimeout(() => {
+            button.textContent = "复制";
+          }, 1800);
+        } catch {
+          button.textContent = code;
+        }
+      });
     });
   </script>
 </body>
